@@ -4,10 +4,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, required: true %>
-    <%= f.input :height, required: true %>
-    <%= f.input :date_of_birth, required: true %>
-    <%= f.input :gender %>
+    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :height, required: true, autofocus: true %>
+    <%= f.input :date_of_birth, required: true, autofocus: true %>
+    <%= f.input :gender, required: true, autofocus: true %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
