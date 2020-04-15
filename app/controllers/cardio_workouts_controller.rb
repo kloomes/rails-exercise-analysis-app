@@ -33,6 +33,12 @@ class CardioWorkoutsController < ApplicationController
     redirect_to user_cardio_workouts_path(current_user.id)
   end
 
+  def destroy
+    @cardio_workout = CardioWorkout.find(params[:id])
+    @cardio_workout.destroy
+    redirect_to user_cardio_workouts_path(current_user.id)
+  end
+
   private
 
   def cardio_workout_params

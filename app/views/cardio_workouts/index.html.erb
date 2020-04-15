@@ -3,5 +3,5 @@
 <%= link_to "New Cardio", new_user_cardio_workout_path(current_user.id) %>
 <hr>
 <% @cardio_workouts.each do |cardio_workout| %>
-<p><%= link_to cardio_workout.workout_type, user_cardio_workout_path(user_id: current_user.id, id: cardio_workout.id) %> - <%= cardio_workout.distance %> - <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %> - <%= link_to "Edit", edit_user_cardio_workout_path(user_id: current_user.id, id: cardio_workout.id) %></p>
+<p><%= link_to cardio_workout.workout_type, user_cardio_workout_path(user_id: current_user.id, id: cardio_workout.id) %> - <%= cardio_workout.distance %> - <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %> - <%= link_to "Edit", edit_user_cardio_workout_path(user_id: current_user.id, id: cardio_workout.id) %> <%= link_to "Delete", user_cardio_workout_path(user_id: current_user.id, id: cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
 <% end %>
