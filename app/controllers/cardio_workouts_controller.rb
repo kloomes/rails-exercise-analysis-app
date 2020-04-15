@@ -22,6 +22,17 @@ class CardioWorkoutsController < ApplicationController
     end
   end
 
+  def edit
+    @cardio_workout = CardioWorkout.find(params[:id])
+  end
+
+  def update
+    @cardio_workout = CardioWorkout.find(params[:id])
+    @cardio_workout.update_attributes(cardio_workout_params)
+    @cardio_workout.save
+    redirect_to user_cardio_workouts_path(current_user.id)
+  end
+
   private
 
   def cardio_workout_params
