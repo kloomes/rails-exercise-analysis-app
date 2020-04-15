@@ -1,0 +1,4 @@
+<h1>Cardio Index</h1>
+<% @cardio_workouts.each do |cardio_workout| %>
+<p><%= cardio_workout.workout_type %> - <%= cardio_workout.distance %> - <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %></p>
+<% end %>
