@@ -16,6 +16,8 @@
         </li>
         <li class="nav-item">
           <%= link_to "Stats", user_stats_path(current_user.id), class: "nav-link" %>
+        </li><li class="nav-item">
+          <%= link_to "New Stat", new_user_stat_path(current_user.id), class: "nav-link" %>
         </li>
       <% else %>
         <li class="nav-item">
