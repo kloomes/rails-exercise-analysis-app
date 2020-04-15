@@ -13,7 +13,7 @@ class StatsController < ApplicationController
     @stat = Stat.new(stat_params)
     @user = User.find(params[:user_id])
     @stat[:user_id] = @user.id
-    @stat[:lean_mass] = ((100 - @stat.body_fat) / 100) * @stat.weight
+    @stat[:lean_mass] = (((100 - @stat.body_fat) / 100) * @stat.weight).truncate(2)
     @stat[:bmi] = @stat.weight / ((@user.height / 100) ** 2)
     if @stat.save
       redirect_to user_stats_path(current_user.id)
@@ -31,6 +31,12 @@ class StatsController < ApplicationController
     @stat = Stat.find(params[:id])
     @stat.update_attributes(stat_params)
     @stat.save
+    redirect_to user_stats_path(current_user.id)
+  end
+
+  def destroy
+    @stat = Stat.find(params[:id])
+    @stat.destroy
     redirect_to user_stats_path(current_user.id)
   end
 
