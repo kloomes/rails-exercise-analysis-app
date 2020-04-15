@@ -22,6 +22,18 @@ class StatsController < ApplicationController
     end
   end
 
+  def edit
+    @stat = Stat.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def update
+    @stat = Stat.find(params[:id])
+    @stat.update_attributes(stat_params)
+    @stat.save
+    redirect_to user_stats_path(current_user.id)
+  end
+
   private
 
   def stat_params
