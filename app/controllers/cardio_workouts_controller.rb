@@ -1,0 +1,2 @@
+class CardioWorkoutsController < ApplicationController
+end
