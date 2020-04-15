@@ -19,6 +19,12 @@
         </li><li class="nav-item">
           <%= link_to "New Stat", new_user_stat_path(current_user.id), class: "nav-link" %>
         </li>
+        </li><li class="nav-item">
+          <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user.id), class: "nav-link" %>
+        </li>
+        </li><li class="nav-item">
+          <%= link_to "New Cardio", new_user_cardio_workout_path(current_user.id), class: "nav-link" %>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
