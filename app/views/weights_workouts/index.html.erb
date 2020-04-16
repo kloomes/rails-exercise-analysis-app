@@ -1,4 +1,4 @@
 <h1>Weights Workout Index</h1>
 <% @weights_workouts.each do |weights_workout| %>
-<p><%=  weights_workout.workout_type %> - <%=  weights_workout.duration_hours %>:<%=  weights_workout.duration_minutes %>:<%=  weights_workout.duration_seconds %></p>
+<p><%= link_to weights_workout.workout_type, user_weights_workout_path(user_id: current_user.id, id: weights_workout.id) %> - <%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %> - <%= link_to "Edit", edit_user_weights_workout_path(user_id: current_user.id, id: weights_workout.id) %> <%= link_to "Delete", user_weights_workout_path(user_id: current_user.id, id: weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
 <% end %>
