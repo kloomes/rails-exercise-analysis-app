@@ -1,2 +1,5 @@
 <h1>Weights Show Page</h1>
 <p><%= @weights_workout.workout_type %></p>
+<% @exercises.each do |exercise| %>
+<li><%= exercise.name %></li>
+<% end %>
