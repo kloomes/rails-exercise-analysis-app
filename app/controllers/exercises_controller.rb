@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.new(exercise_params)
-    @weights_workout = WeightsWorkout.find(params[:user_id])
+    @weights_workout = WeightsWorkout.find(params[:weights_workout_id])
     @exercise[:weights_workout_id] = @weights_workout.id
     if @exercise.save
       redirect_to user_weights_workout_path(user_id: current_user.id, id: @weights_workout.id)
