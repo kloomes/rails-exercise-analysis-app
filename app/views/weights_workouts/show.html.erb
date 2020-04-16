@@ -1,7 +1,7 @@
 <h1>Weights Show Page</h1>
 <p><%= @weights_workout.workout_type %></p>
 <% @exercises.each do |exercise| %>
-<li><%= exercise.name %></li>
+<li><%= exercise.name %> <%= link_to "Delete", user_weights_workout_exercise_path(user_id: current_user.id, weights_workout_id: params[:id], id: exercise.id), method: :delete, data: { confirm: 'Are you sure?' }%></li>
 <% end %>
 <br>
 <hr>
