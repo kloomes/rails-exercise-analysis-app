@@ -3,3 +3,9 @@
 <% @exercises.each do |exercise| %>
 <li><%= exercise.name %></li>
 <% end %>
+<br>
+<hr>
+<%= simple_form_for [current_user, @weights_workout, @exercise] do |f| %>
+<%= f.input :name %>
+<%= f.submit %>
+<% end %>

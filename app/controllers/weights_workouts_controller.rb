@@ -38,6 +38,7 @@ class WeightsWorkoutsController < ApplicationController
   def show
     @weights_workout = WeightsWorkout.find(params[:id])
     @exercises = Exercise.where(weights_workout_id: params[:id])
+    @exercise = Exercise.new
   end
 
   private
