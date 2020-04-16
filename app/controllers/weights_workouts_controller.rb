@@ -35,6 +35,10 @@ class WeightsWorkoutsController < ApplicationController
     redirect_to user_weights_workouts_path(current_user.id)
   end
 
+  def show
+    @weights_workout = WeightsWorkout.find(params[:id])
+  end
+
   private
 
   def weights_workout_params
