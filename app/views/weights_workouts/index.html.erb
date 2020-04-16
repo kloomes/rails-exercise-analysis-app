@@ -1,0 +1,4 @@
+<h1>Weights Workout Index</h1>
+<% @weights_workouts.each do |weights_workout| %>
+<p><%=  weights_workout.workout_type %> - <%=  weights_workout.duration_hours %>:<%=  weights_workout.duration_minutes %>:<%=  weights_workout.duration_seconds %></p>
+<% end %>
