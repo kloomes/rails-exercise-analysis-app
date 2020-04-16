@@ -18,6 +18,23 @@ class WeightsWorkoutsController < ApplicationController
     end
   end
 
+  def edit
+    @weights_workout = WeightsWorkout.find(params[:id])
+  end
+
+  def update
+    @weights_workout = WeightsWorkout.find(params[:id])
+    @weights_workout.update_attributes(weights_workout_params)
+    @weights_workout.save
+    redirect_to user_weights_workouts_path(current_user.id)
+  end
+
+  def destroy
+    @weights_workout = WeightsWorkout.find(params[:id])
+    @weights_workout.destroy
+    redirect_to user_weights_workouts_path(current_user.id)
+  end
+
   private
 
   def weights_workout_params
