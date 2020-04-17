@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Simple exercise tracking app with the intent of performing various analytics for the user on the data.
