@@ -1,8 +1,8 @@
 <h1>New Stat</h1>
 <%= simple_form_for [current_user, @stat] do |f| %>
-<%= f.input :date %>
-<%= f.input :time %>
-<%= f.input :weight %>
-<%= f.input :body_fat %>
-<%= f.submit %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.input :weight %>
+  <%= f.input :body_fat %>
+  <%= f.submit %>
 <% end %>

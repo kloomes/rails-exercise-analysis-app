@@ -4,7 +4,7 @@ class ExercisesController < ApplicationController
     @weights_workout = WeightsWorkout.find(params[:weights_workout_id])
     @exercise[:weights_workout_id] = @weights_workout.id
     if @exercise.save
-      redirect_to user_weights_workout_path(user_id: current_user.id, id: @weights_workout.id)
+      redirect_to user_weights_workout_path(user_id: current_user, id: @weights_workout.id)
     else
       render :new
     end
@@ -13,7 +13,7 @@ class ExercisesController < ApplicationController
   def destroy
     @exercise = Exercise.find(params[:id])
     @exercise.destroy
-    redirect_to user_weights_workout_path(user_id: current_user.id, id: params[:weights_workout_id])
+    redirect_to user_weights_workout_path(user_id: current_user, id: params[:weights_workout_id])
   end
 
   private

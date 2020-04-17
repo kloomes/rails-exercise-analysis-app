@@ -1,6 +1,6 @@
 class CardioWorkoutsController < ApplicationController
   def index
-    @cardio_workouts = CardioWorkout.where(user_id: current_user.id)
+    @cardio_workouts = CardioWorkout.where(user_id: current_user)
   end
 
   def show
@@ -16,7 +16,7 @@ class CardioWorkoutsController < ApplicationController
     @user = User.find(params[:user_id])
     @cardio_workout[:user_id] = @user.id
     if @cardio_workout.save
-      redirect_to user_cardio_workouts_path(current_user.id)
+      redirect_to user_cardio_workouts_path(current_user)
     else
       render :new
     end
@@ -30,13 +30,13 @@ class CardioWorkoutsController < ApplicationController
     @cardio_workout = CardioWorkout.find(params[:id])
     @cardio_workout.update_attributes(cardio_workout_params)
     @cardio_workout.save
-    redirect_to user_cardio_workouts_path(current_user.id)
+    redirect_to user_cardio_workouts_path(current_user)
   end
 
   def destroy
     @cardio_workout = CardioWorkout.find(params[:id])
     @cardio_workout.destroy
-    redirect_to user_cardio_workouts_path(current_user.id)
+    redirect_to user_cardio_workouts_path(current_user)
   end
 
   private
