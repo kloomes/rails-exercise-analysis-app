@@ -1,6 +1,6 @@
 class WeightsWorkoutsController < ApplicationController
   def index
-    @weights_workouts = WeightsWorkout.where(user_id: current_user.id)
+    @weights_workouts = WeightsWorkout.where(user_id: current_user)
   end
 
   def new
@@ -12,7 +12,7 @@ class WeightsWorkoutsController < ApplicationController
     @user = User.find(params[:user_id])
     @weights_workout[:user_id] = @user.id
     if @weights_workout.save
-      redirect_to user_weights_workouts_path(current_user.id)
+      redirect_to user_weights_workouts_path(current_user)
     else
       render :new
     end
@@ -26,13 +26,13 @@ class WeightsWorkoutsController < ApplicationController
     @weights_workout = WeightsWorkout.find(params[:id])
     @weights_workout.update_attributes(weights_workout_params)
     @weights_workout.save
-    redirect_to user_weights_workouts_path(current_user.id)
+    redirect_to user_weights_workouts_path(current_user)
   end
 
   def destroy
     @weights_workout = WeightsWorkout.find(params[:id])
     @weights_workout.destroy
-    redirect_to user_weights_workouts_path(current_user.id)
+    redirect_to user_weights_workouts_path(current_user)
   end
 
   def show
