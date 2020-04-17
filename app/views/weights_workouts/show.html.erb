@@ -1,16 +1,16 @@
 <h1>Weights Show Page</h1>
 <p><%= @weights_workout.workout_type %></p>
 <% @exercises.each do |exercise| %>
-<li><%= exercise.name %> <%= link_to "Delete", user_weights_workout_exercise_path(user_id: current_user.id, weights_workout_id: params[:id], id: exercise.id), method: :delete, data: { confirm: 'Are you sure?' }%></li>
-<% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
-<% @exercise_sets.each do |set| %>
-<p><%= set.weight %> - <%= set.reps %></p>
-<% end %>
-<%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
-<%= f.input :weight %>
-<%= f.input :reps %>
-<%= f.submit %>
-<% end %>
+  <li><%= exercise.name %> <%= link_to "Delete", user_weights_workout_exercise_path(user_id: current_user.id, weights_workout_id: params[:id], id: exercise.id), method: :delete, data: { confirm: 'Are you sure?' }%></li>
+  <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
+  <% @exercise_sets.each do |set| %>
+    <p><%= set.weight %> - <%= set.reps %> <%= link_to "Delete", user_weights_workout_exercise_exercise_set_path(user_id: current_user.id, weights_workout_id: params[:id], exercise_id: exercise.id, exercise_set_id: set.id), method: :delete, data: { confirm: 'Are you sure?' }%></li></p>
+  <% end %>
+  <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
+  <%= f.input :weight %>
+  <%= f.input :reps %>
+  <%= f.submit %>
+  <% end %>
 <% end %>
 <br>
 <hr>

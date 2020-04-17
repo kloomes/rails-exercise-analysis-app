@@ -39,7 +39,6 @@ class WeightsWorkoutsController < ApplicationController
     @weights_workout = WeightsWorkout.find(params[:id])
     @exercises = Exercise.where(weights_workout_id: params[:id])
     @exercise = Exercise.new
-    @exercise_sets = ExerciseSet.where(exercise_id: params[:id])
     @exercise_set = ExerciseSet.new
   end
 
