@@ -3,5 +3,5 @@
 <%= link_to "New Stat", new_user_stat_path(current_user) %>
 <hr>
 <% @stats.each do |stat| %>
-  <p><%= stat.date %> - <%= stat.time %> - <%= stat.weight %>kg - <%= stat.body_fat %>% - <%= stat.lean_mass %>kg - <%= stat.bmi %> BMI <%= link_to "Edit", edit_user_stat_path(user_id: current_user, id: stat.id) %> <%= link_to "Delete", user_stat_path(user_id: current_user, id: stat.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
+  <p><%= stat.date %> - <%= stat.time %> - <%= stat.weight %>kg - <%= stat.body_fat %>% - <%= stat.lean_mass %>kg - <%= stat.bmi %> BMI <%= link_to "Edit", edit_user_stat_path(current_user, stat.id) %> <%= link_to "Delete", user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
 <% end %>
