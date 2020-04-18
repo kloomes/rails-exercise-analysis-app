@@ -1,5 +1,19 @@
-<h1>User Show Page</h1>
 <p><%= @user.name %></p>
-<p><%= @user.date_of_birth %></p>
-<p><%= @user.height %></p>
-<p><%= @user.gender %></p>
+<p>Date of Birth: <%= @user.date_of_birth.strftime('%d/%m/%Y') %></p>
+<p>Height: <%= @user.height %>cm</p>
+<p>Gender: <%= @user.gender %></p>
+<hr>
+<% @results.each do |result| %>
+  <div class="card">
+    <% if result.class == CardioWorkout %>
+      <%= link_to "Cardio", user_cardio_workout_path(current_user, result.id) %>
+    <% else %>
+      <%= link_to "Weights", user_weights_workout_path(current_user, result.id) %>
+    <% end %>
+    <%= result.date.strftime('%d/%m/%Y') %>
+    <%= result.time.strftime('%H:%M') %>
+    <%= result.workout_type %>
+    <%= if result.class == CardioWorkout then result.training_type end %>
+    <%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %>
+  </div>
+<% end %>
