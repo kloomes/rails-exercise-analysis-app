@@ -29,8 +29,13 @@
     <div>
       <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %>
     </div>
-    <div><%= link_to "Edit", edit_user_cardio_workout_path(current_user.id, cardio_workout.id) %>
-      <%= link_to "Delete", user_cardio_workout_path(current_user, cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+    <div>
+      <%= link_to edit_user_cardio_workout_path(current_user.id, cardio_workout.id) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to user_cardio_workout_path(current_user, cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </div>
   </div>
 <% end %>

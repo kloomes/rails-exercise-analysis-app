@@ -15,8 +15,12 @@
       <%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %>
     </div>
     <div>
-      <%= link_to "Edit", edit_user_weights_workout_path(current_user, weights_workout.id) %>
-      <%= link_to "Delete", user_weights_workout_path(current_user, weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+      <%= link_to edit_user_weights_workout_path(current_user, weights_workout.id) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to user_weights_workout_path(current_user, weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </div>
   </div>
 <% end %>

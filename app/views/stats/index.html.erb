@@ -21,8 +21,12 @@
       <%= stat.bmi %>BMI
     </div>
     <div>
-      <%= link_to "Edit", edit_user_stat_path(current_user, stat.id) %>
-      <%= link_to "Delete", user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+      <%= link_to edit_user_stat_path(current_user, stat.id) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </div>
   </div>
 <% end %>
