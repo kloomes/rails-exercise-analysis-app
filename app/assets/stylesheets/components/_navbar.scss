@@ -1,6 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #D10027;
+  font-weight: bold;
+}
+.my-nav-link {
+  color: white;
+  margin-left: 20px;
+}
+
+.my-nav-link:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
 }
 
 .navbar-lewagon .navbar-collapse {

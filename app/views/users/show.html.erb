@@ -1,19 +1,32 @@
-<p><%= @user.name %></p>
-<p>Date of Birth: <%= @user.date_of_birth.strftime('%d/%m/%Y') %></p>
-<p>Height: <%= @user.height %>cm</p>
-<p>Gender: <%= @user.gender %></p>
+<div class="flex banner">
+  <p><%= @user.name %></p>
+  <p>Weight: <%= @latest_stats.weight %>kg</p>
+  <p>Body Fat: <%= @latest_stats.body_fat %>%</p>
+  <p>Lean Mass: <%= @latest_stats.lean_mass %>kg</p>
+  <p>BMI: <%= @latest_stats.bmi %></p>
+</div>
 <hr>
 <% @results.each do |result| %>
-  <div class="card">
+  <div class="my-card">
     <% if result.class == CardioWorkout %>
-      <%= link_to "Cardio", user_cardio_workout_path(current_user, result.id) %>
+      <div>
+        <p><%= link_to "Cardio", user_cardio_workout_path(current_user, result.id) %></p>
+        <p><%= result.workout_type %></p>
+        <p><%= if result.class == CardioWorkout then result.training_type end %></p>
+      </div>
     <% else %>
-      <%= link_to "Weights", user_weights_workout_path(current_user, result.id) %>
+      <div>
+        <p><%= link_to "Weights", user_weights_workout_path(current_user, result.id) %></p>
+        <p><%= result.workout_type %></p>
+        <p><%= if result.class == CardioWorkout then result.training_type end %></p>
+      </div>
     <% end %>
-    <%= result.date.strftime('%d/%m/%Y') %>
-    <%= result.time.strftime('%H:%M') %>
-    <%= result.workout_type %>
-    <%= if result.class == CardioWorkout then result.training_type end %>
-    <%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %>
+    <div>
+      <p><%= result.date.strftime('%d/%m/%Y') %></p>
+      <p><%= result.time.strftime('%H:%M') %></p>
+    </div>
+    <div>
+      <%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %>
+    </div>
   </div>
 <% end %>

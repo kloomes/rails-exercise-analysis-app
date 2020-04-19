@@ -9,31 +9,36 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Home", user_path(current_user), class: "nav-link" %>
+          <%= link_to "Home", user_path(current_user), class: "my-nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Edit My Profile", edit_user_registration_path, class: "nav-link" %>
+          <%= link_to "Edit My Profile", edit_user_registration_path, class: "my-nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Stats", user_stats_path(current_user), class: "nav-link" %>
-        </li><li class="nav-item">
-          <%= link_to "New Stat", new_user_stat_path(current_user), class: "nav-link" %>
+          <%= link_to "Stats", user_stats_path(current_user), class: "my-nav-link" %>
         </li>
-        </li><li class="nav-item">
-          <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user), class: "nav-link" %>
+        <li class="nav-item">
+          <%= link_to "New Stat", new_user_stat_path(current_user), class: "my-nav-link" %>
         </li>
-        </li><li class="nav-item">
-          <%= link_to "New Cardio", new_user_cardio_workout_path(current_user), class: "nav-link" %>
         </li>
-        </li><li class="nav-item">
-          <%= link_to "Weights Workouts", user_weights_workouts_path(current_user), class: "nav-link" %>
+        <li class="nav-item">
+          <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user), class: "my-nav-link" %>
         </li>
-        </li><li class="nav-item">
-          <%= link_to "New Weights", new_user_weights_workout_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New Cardio", new_user_cardio_workout_path(current_user), class: "my-nav-link" %>
+        </li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Weights Workouts", user_weights_workouts_path(current_user), class: "my-nav-link" %>
+        </li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New Weights", new_user_weights_workout_path(current_user), class: "my-nav-link" %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "my-nav-link" %>
         </li>
       <% end %>
     </ul>
