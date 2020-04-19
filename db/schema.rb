@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_151344) do
+ActiveRecord::Schema.define(version: 2020_04_19_154843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_151344) do
     t.integer "duration_minutes"
     t.integer "duration_seconds"
     t.float "distance"
-    t.float "avg_pace"
-    t.float "max_pace"
     t.float "avg_speed"
     t.float "max_speed"
     t.integer "avg_hr"
@@ -101,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_151344) do
     t.integer "avg_hr"
     t.integer "max_hr"
     t.integer "kcal"
-    t.integer "total_volume"
     t.text "notes"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
