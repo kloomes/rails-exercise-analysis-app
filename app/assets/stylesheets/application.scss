@@ -11,4 +11,23 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/profile";
+
+
+.light {
+  opacity: 0.6;
+}
+
+.date-time {
+  text-align: center;
+}
+
+a {
+  color: #D10027;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #D10027;
+  opacity: 0.7;
+  font-weight: bold;
+}

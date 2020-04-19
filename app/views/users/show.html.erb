@@ -8,25 +8,22 @@
 <hr>
 <% @results.each do |result| %>
   <div class="my-card">
+    <div class="date-time">
+      <div><%= result.date.strftime('%d/%m/%Y') %></div>
+      <div><%= result.time.strftime('%H:%M') %></div>
+    </div>
     <% if result.class == CardioWorkout %>
       <div>
-        <p><%= link_to "Cardio", user_cardio_workout_path(current_user, result.id) %></p>
-        <p><%= result.workout_type %></p>
-        <p><%= if result.class == CardioWorkout then result.training_type end %></p>
+        <div><%= link_to result.workout_type, user_cardio_workout_path(current_user, result.id) %></div>
+        <div class="light"><%= result.training_type %></div>
       </div>
     <% else %>
       <div>
-        <p><%= link_to "Weights", user_weights_workout_path(current_user, result.id) %></p>
-        <p><%= result.workout_type %></p>
-        <p><%= if result.class == CardioWorkout then result.training_type end %></p>
+        <div><%= link_to result.workout_type, user_weights_workout_path(current_user, result.id) %></div>
       </div>
     <% end %>
     <div>
-      <p><%= result.date.strftime('%d/%m/%Y') %></p>
-      <p><%= result.time.strftime('%H:%M') %></p>
-    </div>
-    <div>
-      <%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %>
+      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div><div class="light">Duration</div>
     </div>
   </div>
 <% end %>

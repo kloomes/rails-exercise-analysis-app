@@ -1,32 +1,36 @@
-<h1>Stats Index</h1>
+<h3 class="banner">Body Measurements</h3>
 <hr>
 <%= link_to "New Stat", new_user_stat_path(current_user) %>
 <hr>
 <% @stats.each do |stat| %>
   <div class="my-card">
-    <div>
-      <%= stat.date.strftime('%d/%m/%Y') %>
-      <%= stat.time.strftime('%H:%M') %>
+    <div class="date-time">
+      <div><%= stat.date.strftime('%d/%m/%Y') %></div>
+      <div><%= stat.time.strftime('%H:%M') %></div>
     </div>
     <div>
-      Weight: <%= stat.weight %>kg
+      <div><%= stat.weight %>kg</div><div class="light">Weight</div>
     </div>
     <div>
-      Body Fat: <%= stat.body_fat %>%
+      <div><%= stat.body_fat %>%</div><div class="light">Body Fat</div>
     </div>
     <div>
-      Lean Mass:<%= stat.lean_mass %>kg
+      <div><%= stat.lean_mass %>kg</div><div class="light">Lean Mass</div>
     </div>
     <div>
-      <%= stat.bmi %>BMI
+      <div><%= stat.bmi %></div><div class="light">BMI</div>
     </div>
     <div>
-      <%= link_to edit_user_stat_path(current_user, stat.id) do %>
+      <div>
+        <%= link_to edit_user_stat_path(current_user, stat.id) do %>
         <i class="far fa-edit"></i>
-      <% end %>
-      <%= link_to user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="far fa-trash-alt"></i>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
