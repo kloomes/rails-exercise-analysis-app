@@ -8,10 +8,18 @@
       <%= stat.date.strftime('%d/%m/%Y') %>
       <%= stat.time.strftime('%H:%M') %>
     </div>
-    <div>Weight: <%= stat.weight %>kg</div>
-    <div>Body Fat: <%= stat.body_fat %>%</div>
-    <div>Lean Mass:<%= stat.lean_mass %>kg</div>
-    <div><%= stat.bmi %>BMI</div>
+    <div>
+      Weight: <%= stat.weight %>kg
+    </div>
+    <div>
+      Body Fat: <%= stat.body_fat %>%
+    </div>
+    <div>
+      Lean Mass:<%= stat.lean_mass %>kg
+    </div>
+    <div>
+      <%= stat.bmi %>BMI
+    </div>
     <div>
       <%= link_to "Edit", edit_user_stat_path(current_user, stat.id) %>
       <%= link_to "Delete", user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' }%>
