@@ -3,5 +3,18 @@
 <%= link_to "New Stat", new_user_stat_path(current_user) %>
 <hr>
 <% @stats.each do |stat| %>
-  <p><%= stat.date %> - <%= stat.time %> - <%= stat.weight %>kg - <%= stat.body_fat %>% - <%= stat.lean_mass %>kg - <%= stat.bmi %> BMI <%= link_to "Edit", edit_user_stat_path(current_user, stat.id) %> <%= link_to "Delete", user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
+  <div class="my-card">
+    <div>
+      <%= stat.date.strftime('%d/%m/%Y') %>
+      <%= stat.time.strftime('%H:%M') %>
+    </div>
+    <div>Weight: <%= stat.weight %>kg</div>
+    <div>Body Fat: <%= stat.body_fat %>%</div>
+    <div>Lean Mass:<%= stat.lean_mass %>kg</div>
+    <div><%= stat.bmi %>BMI</div>
+    <div>
+      <%= link_to "Edit", edit_user_stat_path(current_user, stat.id) %>
+      <%= link_to "Delete", user_stat_path(current_user, stat.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </div>
+  </div>
 <% end %>
