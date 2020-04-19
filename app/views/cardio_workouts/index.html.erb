@@ -1,7 +1,45 @@
-<h1>Cardio Index</h1>
+<h3 class="banner">All Cardio Workouts</h3>
 <hr>
 <%= link_to "New Cardio", new_user_cardio_workout_path(current_user) %>
 <hr>
 <% @cardio_workouts.each do |cardio_workout| %>
-  <p><%= link_to cardio_workout.workout_type, user_cardio_workout_path(current_user, cardio_workout.id) %> - <%= cardio_workout.distance %> - <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %> - <%= link_to "Edit", edit_user_cardio_workout_path(current_user.id, cardio_workout.id) %> <%= link_to "Delete", user_cardio_workout_path(current_user, cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
+  <div class="my-card">
+    <div class="date-time">
+      <div><%= cardio_workout.date.strftime('%d/%m/%Y') %></div>
+      <div><%= cardio_workout.time.strftime('%H:%M') %></div>
+    </div>
+    <div>
+      <%= link_to cardio_workout.workout_type, user_cardio_workout_path(current_user, cardio_workout.id) %><div class="light">Activity</div>
+    </div>
+    <div>
+      <%= cardio_workout.training_type %><div class="light">Training Type</div>
+    </div>
+    <div>
+      <%= cardio_workout.distance %><div class="light">km</div>
+    </div>
+    <div>
+      <%= cardio_workout.avg_pace %><div class="light">min/km</div>
+    </div>
+    <div>
+      <%= cardio_workout.avg_hr %><div class="light">bpm</div>
+    </div>
+    <div>
+      <%= cardio_workout.kcal %><div class="light">kcal</div>
+    </div>
+    <div>
+      <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %><div class="light">Duration</div>
+    </div>
+    <div>
+      <div>
+        <%= link_to edit_user_cardio_workout_path(current_user.id, cardio_workout.id) do %>
+        <i class="far fa-edit"></i>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to user_cardio_workout_path(current_user, cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>
