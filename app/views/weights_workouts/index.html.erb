@@ -1,7 +1,22 @@
-<h1>Weights Workout Index</h1>
+<h3 class="banner">Weights Workouts</h3>
 <hr>
 <%= link_to "New Weights", new_user_weights_workout_path(current_user) %>
 <hr>
 <% @weights_workouts.each do |weights_workout| %>
-  <p><%= link_to weights_workout.workout_type, user_weights_workout_path(current_user, weights_workout.id) %> - <%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %> - <%= link_to "Edit", edit_user_weights_workout_path(current_user, weights_workout.id) %> <%= link_to "Delete", user_weights_workout_path(current_user, weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%></p>
+  <div class="my-card">
+    <div>
+      <%= weights_workout.date.strftime('%d/%m/%Y') %>
+      <%= weights_workout.time.strftime('%H:%M') %>
+    </div>
+    <div>
+      <%= link_to weights_workout.workout_type, user_weights_workout_path(current_user, weights_workout.id) %>
+    </div>
+    <div>
+      <%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %>
+    </div>
+    <div>
+      <%= link_to "Edit", edit_user_weights_workout_path(current_user, weights_workout.id) %>
+      <%= link_to "Delete", user_weights_workout_path(current_user, weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </div>
+  </div>
 <% end %>
