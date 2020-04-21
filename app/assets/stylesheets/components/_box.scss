@@ -1,0 +1,22 @@
+.box {
+  background-color: white;
+  border: 1px solid lightgrey;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2em;
+  ul {
+    list-style: none;
+  }
+  h3 {
+    color: #D10027;
+    opacity: 0.8;
+    font-weight: bold;
+  }
+  li {
+    color: #D10027;
+  }
+  em {
+    color: black !important;
+  }
+}
