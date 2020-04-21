@@ -68,3 +68,20 @@ h3 {
   margin-left: 33%;
 }
 
+.border-top {
+  border-top: 1px solid lightgrey;
+}
+
+.wide {
+  width: 100% !important;
+}
+
+.exercise-form {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  .form-control {
+    width: 100%;
+    margin: 0;
+  }
+}

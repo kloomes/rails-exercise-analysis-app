@@ -26,7 +26,7 @@
           </td>
         </tr>
       <% end %>
-      <tr class="center">
+      <tr class="border-top">
       <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
         <th width="33%"><%= f.input :weight %></th>
         <th width="33%"><%= f.input :reps %></th>
@@ -39,8 +39,9 @@
   <% end %>
   <br>
   <hr>
-</div>
-<%= simple_form_for [current_user, @weights_workout, @exercise] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
+
+<%= simple_form_for [current_user, @weights_workout, @exercise], html: { class: "exercise-form"} do |f| %>
+  <strong><%= f.input :name, :label => "Add Exercise"%></strong>
+  <%= f.submit value: "Add" %>
 <% end %>
+</div>
