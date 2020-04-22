@@ -1,5 +1,5 @@
 <div class="banner">
-  <h3>Add Measurment</h3>
+  <h3>Add Measurement</h3>
 </div>
 <div class="box">
   <%= simple_form_for [current_user, @stat] do |f| %>
@@ -7,6 +7,6 @@
     <%= f.input :time %>
     <%= f.input :weight %>
     <%= f.input :body_fat %>
-    <%= f.submit %>
+    <%= f.button :submit, "Add Measurement", class: "submit" %>
   <% end %>
 </div>
