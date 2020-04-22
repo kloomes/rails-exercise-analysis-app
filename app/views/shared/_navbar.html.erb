@@ -12,30 +12,38 @@
           <%= link_to "Home", user_path(current_user), class: "my-nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Back", :back, class: "my-nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Edit My Profile", edit_user_registration_path, class: "my-nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Stats", user_stats_path(current_user), class: "my-nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "New Stat", new_user_stat_path(current_user), class: "my-nav-link" %>
-        </li>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user), class: "my-nav-link" %>
-        </li>
-        </li>
-        <li class="nav-item">
-          <%= link_to "New Cardio", new_user_cardio_workout_path(current_user), class: "my-nav-link" %>
-        </li>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Weights Workouts", user_weights_workouts_path(current_user), class: "my-nav-link" %>
-        </li>
-        </li>
-        <li class="nav-item">
-          <%= link_to "New Weights", new_user_weights_workout_path(current_user), class: "my-nav-link" %>
-        </li>
+        <div class="dropdown">
+          <a class="my-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Body Measurements
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "History", user_stats_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "New Measurement", new_user_stat_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="my-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            View Workouts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "Weights Workouts", user_weights_workouts_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="my-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            New Workout
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "New Cardio", new_user_cardio_workout_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "New Weights", new_user_weights_workout_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "my-nav-link" %>

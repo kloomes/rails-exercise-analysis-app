@@ -4,15 +4,21 @@
 <hr>
 <% @weights_workouts.each do |weights_workout| %>
   <div class="my-card">
-    <div class="date-time">
+    <div class="date-time hor-flex">
       <div><%= weights_workout.date.strftime('%d/%m/%Y') %></div>
       <div><%= weights_workout.time.strftime('%H:%M') %></div>
     </div>
-    <div>
-      <div><%= link_to weights_workout.workout_type, user_weights_workout_path(current_user, weights_workout.id) %></div><div class="light">Workout Type</div>
+    <div class="hor-flex">
+      <div><%= link_to weights_workout.workout_type, user_weights_workout_path(current_user, weights_workout.id) %></div>
+      <div class="light">Workout Type</div>
     </div>
-    <div>
-      <div><%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %></div><div class="light">Duration</div>
+    <div class="hor-flex">
+      <div><%= weights_workout.kcal %><em>kcal</em></div>
+      <div class="light">Calories</div>
+    </div>
+    <div class="hor-flex">
+      <div><%= weights_workout.duration_hours %>:<%= weights_workout.duration_minutes %>:<%= weights_workout.duration_seconds %></div>
+      <div class="light">Duration</div>
     </div>
     <div>
       <div><%= link_to edit_user_weights_workout_path(current_user, weights_workout.id) do %>

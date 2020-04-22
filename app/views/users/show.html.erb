@@ -1,9 +1,9 @@
-<div class="flex banner">
-  <p><%= @user.name %></p>
-  <p>Weight: <%= @latest_stats.weight %>kg</p>
-  <p>Body Fat: <%= @latest_stats.body_fat %>%</p>
-  <p>Lean Mass: <%= @latest_stats.lean_mass %>kg</p>
-  <p>BMI: <%= @latest_stats.bmi %></p>
+<div class="banner">
+  <h3><%= @user.name %></h3>
+  <p class="light">Weight:</p><p class="red"><%= @latest_stats.weight %>kg</p>
+  <p class="light">Body Fat:</p><p class="red"><%= @latest_stats.body_fat %>%</p>
+  <p class="light">Lean Mass:</p><p class="red"><%= @latest_stats.lean_mass %>kg</p>
+  <p class="light">BMI:</p><p class="red"><%= @latest_stats.bmi %></p>
 </div>
 <hr>
 <% @results.each do |result| %>
@@ -13,17 +13,22 @@
       <div><%= result.time.strftime('%H:%M') %></div>
     </div>
     <% if result.class == CardioWorkout %>
-      <div>
+      <div class="hor-flex">
         <div><%= link_to result.workout_type, user_cardio_workout_path(current_user, result.id) %></div>
         <div class="light"><%= result.training_type %></div>
       </div>
     <% else %>
-      <div>
+      <div class="hor-flex">
         <div><%= link_to result.workout_type, user_weights_workout_path(current_user, result.id) %></div>
       </div>
     <% end %>
-    <div>
-      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div><div class="light">Duration</div>
+    <div class="hor-flex">
+      <div><%= result.kcal %><em>kcal</em></div>
+      <div class="light">Calories</div>
+    </div>
+    <div class="hor-flex">
+      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div>
+      <div class="light">Duration</div>
     </div>
   </div>
 <% end %>

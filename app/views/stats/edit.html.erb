@@ -1,8 +1,10 @@
-<h1>Edit Stat</h1>
-<%= simple_form_for [current_user, @stat] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :weight %>
-  <%= f.input :body_fat %>
-  <%= f.submit %>
-<% end %>
+<h3 class="banner">Edit Stat</h3>
+<div class="box">
+  <%= simple_form_for [current_user, @stat] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :weight %>
+    <%= f.input :body_fat %>
+    <%= f.button :submit, "Save", class: "submit" %>
+  <% end %>
+</div>

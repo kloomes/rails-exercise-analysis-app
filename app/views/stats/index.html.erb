@@ -4,20 +4,20 @@
 <hr>
 <% @stats.each do |stat| %>
   <div class="my-card">
-    <div class="date-time">
+    <div class="date-time hor-flex">
       <div><%= stat.date.strftime('%d/%m/%Y') %></div>
       <div><%= stat.time.strftime('%H:%M') %></div>
     </div>
-    <div>
+    <div class="hor-flex">
       <div><%= stat.weight %>kg</div><div class="light">Weight</div>
     </div>
-    <div>
+    <div class="hor-flex">
       <div><%= stat.body_fat %>%</div><div class="light">Body Fat</div>
     </div>
-    <div>
+    <div class="hor-flex">
       <div><%= stat.lean_mass %>kg</div><div class="light">Lean Mass</div>
     </div>
-    <div>
+    <div class="hor-flex">
       <div><%= stat.bmi %></div><div class="light">BMI</div>
     </div>
     <div>

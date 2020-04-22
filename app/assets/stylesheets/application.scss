@@ -17,6 +17,7 @@
   opacity: 0.6;
 }
 
+
 .date-time {
   text-align: center;
 }
@@ -36,14 +37,6 @@ p {
   margin: 0;
 }
 
-table {
-  width: 50%;
-  text-align: center;
-  background-color: white;
-  border: 1px solid lightgrey;
-  margin-bottom: 10px;
-}
-
 h3 {
   color: #D10027;
   opacity: 0.8;
@@ -51,37 +44,6 @@ h3 {
   text-align: center;
 }
 
-.hor-flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.my-plus {
+.red {
   color: #D10027;
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.form-control {
-  width: 35% ;
-  margin-left: 33%;
-}
-
-.border-top {
-  border-top: 1px solid lightgrey;
-}
-
-.wide {
-  width: 100% !important;
-}
-
-.exercise-form {
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  .form-control {
-    width: 100%;
-    margin: 0;
-  }
 }

@@ -1,14 +1,12 @@
-<h3><%= @weights_workout.workout_type %></h3>
+<h3 class="banner"><%= @weights_workout.workout_type %></h3>
 <hr>
 <div class="hor-flex">
   <% @exercises.each do |exercise| %>
-    <h5>
-      <strong>
-        <%= exercise.name %> <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <strong class="sub-title">
+        <h3><%= exercise.name %> <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
           <i class="far fa-trash-alt"></i>
-        <% end %>
+        <% end %></h3>
       </strong>
-    </h5>
     <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
     <table>
       <tr>
