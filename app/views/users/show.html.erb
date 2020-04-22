@@ -23,7 +23,12 @@
       </div>
     <% end %>
     <div class="hor-flex">
-      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div><div class="light">Duration</div>
+      <div><%= result.kcal %><em>kcal</em></div>
+      <div class="light">Calories</div>
+    </div>
+    <div class="hor-flex">
+      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div>
+      <div class="light">Duration</div>
     </div>
   </div>
 <% end %>

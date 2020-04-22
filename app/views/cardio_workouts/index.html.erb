@@ -9,22 +9,27 @@
       <div><%= cardio_workout.time.strftime('%H:%M') %></div>
     </div>
     <div class="hor-flex">
-      <%= link_to cardio_workout.workout_type, user_cardio_workout_path(current_user, cardio_workout.id) %><div class="light">Activity</div>
+      <%= link_to cardio_workout.workout_type, user_cardio_workout_path(current_user, cardio_workout.id) %>
+      <div class="light">Activity</div>
     </div>
     <div class="hor-flex">
       <%= cardio_workout.training_type %><div class="light">Training Type</div>
     </div>
     <div class="hor-flex">
-      <%= cardio_workout.distance %><div class="light">km</div>
+      <div><%= cardio_workout.distance %><em>km</em></div>
+      <div class="light">Distance</div>
     </div>
     <div class="hor-flex">
-      <%= cardio_workout.avg_pace_minute %>:<%= cardio_workout.avg_pace_seconds %><div class="light">min/km</div>
+      <div><%= cardio_workout.avg_pace_minute %>:<%= cardio_workout.avg_pace_seconds %><em>min/km</em></div>
+      <div class="light">Avg Pace</div>
     </div>
     <div class="hor-flex">
-      <%= cardio_workout.avg_hr %><div class="light">bpm</div>
+      <div><%= cardio_workout.avg_hr %><em>bpm</em></div>
+      <div class="light">Avg HR</div>
     </div>
     <div class="hor-flex">
-      <%= cardio_workout.kcal %><div class="light">kcal</div>
+      <div><%= cardio_workout.kcal %><em>kcal</em></div>
+      <div class="light">Calories</div>
     </div>
     <div class="hor-flex">
       <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %><div class="light">Duration</div>
