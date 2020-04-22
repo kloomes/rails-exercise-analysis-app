@@ -19,11 +19,11 @@
         </li>
         <div class="dropdown">
           <a class="my-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Body Measurments
+            Body Measurements
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <%= link_to "All measurments", user_stats_path(current_user), class: "dropdown-item red" %>
-            <%= link_to "Add measurment", new_user_stat_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "History", user_stats_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "New Measurement", new_user_stat_path(current_user), class: "dropdown-item red" %>
           </div>
         </div>
         <div class="dropdown">
