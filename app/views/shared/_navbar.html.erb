@@ -12,6 +12,9 @@
           <%= link_to "Home", user_path(current_user), class: "my-nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Back", :back, class: "my-nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Edit My Profile", edit_user_registration_path, class: "my-nav-link" %>
         </li>
         <div class="dropdown">

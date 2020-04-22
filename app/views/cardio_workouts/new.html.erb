@@ -1,25 +1,27 @@
-<h1>New Cardio</h1>
-<%= simple_form_for [current_user, @cardio_workout] do |f| %>
-  <%= f.input :workout_type %>
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :training_type %>
-  <%= f.input :duration_hours %>
-  <%= f.input :duration_minutes %>
-  <%= f.input :duration_seconds %>
-  <%= f.input :distance %>
-  <%= f.input :avg_pace_minute %>
-  <%= f.input :avg_pace_seconds %>
-  <%= f.input :max_pace_minute %>
-  <%= f.input :max_pace_seconds %>
-  <%= f.input :avg_speed %>
-  <%= f.input :max_speed %>
-  <%= f.input :avg_hr %>
-  <%= f.input :max_hr %>
-  <%= f.input :kcal %>
-  <%= f.input :ascent %>
-  <%= f.input :descent %>
-  <%= f.input :running_index %>
-  <%= f.input :notes %>
-  <%= f.submit %>
-<% end %>
+<h3 class="banner">New Cardio Workout</h3>
+<div class="box">
+  <%= simple_form_for [current_user, @cardio_workout] do |f| %>
+    <%= f.input :workout_type %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :training_type %>
+    <%= f.input :duration_hours %>
+    <%= f.input :duration_minutes %>
+    <%= f.input :duration_seconds %>
+    <%= f.input :distance %>
+    <%= f.input :avg_pace_minute %>
+    <%= f.input :avg_pace_seconds %>
+    <%= f.input :max_pace_minute %>
+    <%= f.input :max_pace_seconds %>
+    <%= f.input :avg_speed %>
+    <%= f.input :max_speed %>
+    <%= f.input :avg_hr %>
+    <%= f.input :max_hr %>
+    <%= f.input :kcal %>
+    <%= f.input :ascent %>
+    <%= f.input :descent %>
+    <%= f.input :running_index %>
+    <%= f.input :notes %>
+    <%= f.submit %>
+  <% end %>
+</div>

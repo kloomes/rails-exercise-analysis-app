@@ -1,14 +1,16 @@
-<h1>New Weights Workout</h1>
-<%= simple_form_for [current_user, @weights_workout] do |f| %>
-  <%= f.input :workout_type %>
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :duration_hours %>
-  <%= f.input :duration_minutes %>
-  <%= f.input :duration_seconds %>
-  <%= f.input :avg_hr %>
-  <%= f.input :max_hr %>
-  <%= f.input :kcal %>
-  <%= f.input :notes %>
-  <%= f.submit %>
-<% end %>
+<h3 class="banner">New Weights Workout</h3>
+<div class="box">
+  <%= simple_form_for [current_user, @weights_workout] do |f| %>
+    <%= f.input :workout_type %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :duration_hours %>
+    <%= f.input :duration_minutes %>
+    <%= f.input :duration_seconds %>
+    <%= f.input :avg_hr %>
+    <%= f.input :max_hr %>
+    <%= f.input :kcal %>
+    <%= f.input :notes %>
+    <%= f.submit %>
+  <% end %>
+</div>
