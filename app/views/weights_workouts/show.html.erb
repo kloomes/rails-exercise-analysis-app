@@ -26,8 +26,8 @@
       <% end %>
       <tr class="border-top">
       <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
-        <th width="33%"><%= f.input :weight %></th>
-        <th width="33%"><%= f.input :reps %></th>
+        <th width="33%" class="set-inputs"><%= f.input :weight %></th>
+        <th width="33%" class="set-inputs"><%= f.input :reps %></th>
         <td width="33%"><%= button_tag( :class => "btn") do %>
           <i class="fas fa-plus my-plus"></i>
         <% end %>
