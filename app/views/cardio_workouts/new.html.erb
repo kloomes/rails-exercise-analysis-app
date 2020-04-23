@@ -1,26 +1,48 @@
 <h3 class="banner">New Cardio Workout</h3>
-<div class="box">
+<div class="form-box">
   <%= simple_form_for [current_user, @cardio_workout] do |f| %>
-    <%= f.input :workout_type %>
-    <%= f.input :date %>
-    <%= f.input :time %>
-    <%= f.input :training_type %>
-    <%= f.input :duration_hours %>
-    <%= f.input :duration_minutes %>
-    <%= f.input :duration_seconds %>
-    <%= f.input :distance %>
-    <%= f.input :avg_pace_minute %>
-    <%= f.input :avg_pace_seconds %>
-    <%= f.input :max_pace_minute %>
-    <%= f.input :max_pace_seconds %>
-    <%= f.input :avg_speed %>
-    <%= f.input :max_speed %>
-    <%= f.input :avg_hr %>
-    <%= f.input :max_hr %>
-    <%= f.input :kcal %>
-    <%= f.input :ascent %>
-    <%= f.input :descent %>
-    <%= f.input :running_index %>
+    <div class="one-line">
+      <%= f.input :workout_type, label: "Workout Type" %>
+      <%= f.input :training_type, label: "Training Type" %>
+    </div>
+    <div class="one-line">
+      <%= f.input :date, html5: true %>
+      <%= f.input :time, html5: true %>
+    </div>
+    <div class="one-line">
+      <div class="duration">
+        <%= f.input :duration_hours, placeholder: "hh", label: "Duration" %>
+        <%= f.input :duration_minutes, placeholder: "mm", label: '&nbsp;'.html_safe %>
+        <%= f.input :duration_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
+      </div>
+      <%= f.input :distance, label: "Distance (km)" %>
+    </div>
+    <div class="one-line">
+      <div class="duration">
+        <%= f.input :avg_pace_minute, placeholder: "mm", label: "Average Pace (min/km)" %>
+        <%= f.input :avg_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
+      </div>
+      <div class="duration">
+        <%= f.input :max_pace_minute, placeholder: "mm", label: "Max Pace (min/km)" %>
+        <%= f.input :max_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
+      </div>
+    </div>
+    <div class="one-line">
+      <%= f.input :avg_speed, label: "Average Speed (kph)" %>
+      <%= f.input :max_speed, label: "Max Speed (kph)" %>
+    </div>
+    <div class="one-line">
+      <%= f.input :avg_hr, label: "Average HR (bpm)" %>
+      <%= f.input :max_hr, label: "Max HR (bpm)" %>
+    </div>
+    <div class="one-line">
+      <%= f.input :kcal, label: "Calories Burned (kcal)" %>
+      <%= f.input :running_index, label: "Running Index" %>
+    </div>
+    <div class="one-line">
+      <%= f.input :ascent, label: "Ascent (m)" %>
+      <%= f.input :descent, label: "Desent (m)" %>
+    </div>
     <%= f.input :notes %>
     <%= f.button :submit, "Save", class: "submit" %>
   <% end %>

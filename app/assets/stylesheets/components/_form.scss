@@ -1,9 +1,21 @@
-.justify-content-between {
-  justify-content: center !important; // changing simple form for default
-}
-
-label {
-  color: #D10027;
+.form-box {
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  .duration {
+    display: flex;
+  }
+  .text {
+    width: 100%;
+  }
+  label {
+    color: #D10027;
+  }
+  .form-group {
+    margin-bottom: 5px;
+  }
 }
 
 .submit {
@@ -11,3 +23,138 @@ label {
   font-size: 1.2em;
   font-weight: bold;
 }
+
+.one-line {
+  display: flex;
+}
+
+
+.cardio_workout_training_type {
+  margin-left: 30.3%;
+}
+
+.cardio_workout_running_index {
+  margin-left: 30.3%;
+}
+
+.cardio_workout_time {
+  margin-left: 29.8%;
+}
+
+.weights_workout_time {
+  margin-left: 30%;
+}
+
+.weights_workout_duration_minutes {
+  margin-left: 5px;
+}
+
+.weights_workout_duration_seconds {
+  margin-left: 5px;
+}
+
+.weights_workout_max_hr {
+  // display: inline-block;
+  margin-left: 30.3%;
+}
+
+.cardio_workout_duration_minutes {
+  margin-left: 5px;
+}
+
+.cardio_workout_duration_seconds {
+  margin-left: 5px;
+  margin-right: 33.3%;
+}
+
+.cardio_workout_avg_pace_seconds {
+  margin-left: 5px;
+}
+
+.cardio_workout_max_pace_seconds {
+  margin-left: 5px;
+}
+
+.cardio_workout_max_pace_minute {
+  // display: inline-block;
+  margin-left: 10%;
+}
+
+.cardio_workout_max_speed {
+  // display: inline-block;
+  margin-left: 30.3%;
+}
+
+.cardio_workout_max_hr {
+  // display: inline-block;
+  margin-left: 30.3%;
+}
+
+.cardio_workout_descent {
+  // display: inline-block;
+  margin-left: 30.3%;
+}
+
+.cardio_workout_distance {
+  margin-left: -20.3%;
+}
+
+// .cardio_workout_duration_hours {
+//   // display: inline-block;
+//   // width: 100px;
+//   }
+
+//   .cardio_workout_duration_minutes {
+//     // display: inline-block;
+//   }
+
+//   .cardio_workout_duration_seconds {
+//     // display: inline-block;
+//   }
+
+// .justify-content-between {
+//   justify-content: center !important; // changing simple form for default
+// }
+
+
+// label {
+//   color: #D10027;
+// }
+
+// .date {
+//   width: auto !important;
+// }
+
+// .time {
+//   width: auto !important;
+// }
+
+
+
+// .form-group {
+//   margin-bottom: 5px;
+//   // display: flex;
+// }
+
+
+// .cardio_workout_avg_pace_minute {
+//   display: inline-block;
+// }
+
+// .cardio_workout_avg_pace_seconds {
+//   display: inline-block;
+// }
+
+
+
+// .cardio_workout_max_pace_seconds {
+//   display: inline-block;
+// }
+
+// .cardio_workout_date {
+//   display: inline-block;
+// }
+
+// .cardio_workout_time {
+//   display: inline-block;
+// }

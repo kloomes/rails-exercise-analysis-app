@@ -1,8 +1,8 @@
-<h3 class="banner">Edit Stat</h3>
-<div class="box">
+<h3 class="banner">Edit Measurement</h3>
+<div class="form-box">
   <%= simple_form_for [current_user, @stat] do |f| %>
-    <%= f.input :date %>
-    <%= f.input :time %>
+    <%= f.input :date, html5: true %>
+    <%= f.input :time, html5: true %>
     <%= f.input :weight %>
     <%= f.input :body_fat %>
     <%= f.button :submit, "Save", class: "submit" %>
