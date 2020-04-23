@@ -2,15 +2,16 @@
 <div class="box">
   <%= simple_form_for [current_user, @cardio_workout] do |f| %>
     <%= f.input :workout_type %>
-    <%= f.input :date %>
-    <%= f.input :time %>
+    <%= f.input :date, html5: true %>
+    <%= f.input :time, html5: true; %>
     <%= f.input :training_type %>
-    <%= f.input :duration_hours %>
-    <%= f.input :duration_minutes %>
-    <%= f.input :duration_seconds %>
+    <%= f.input :duration_hours, placeholder: "hh", label: false %>
+    <%= f.input :duration_minutes, placeholder: "mm", label: "Duration" %>
+    <%= f.input :duration_seconds, placeholder: "ss", label: false %>
     <%= f.input :distance %>
     <%= f.input :avg_pace_minute %>
     <%= f.input :avg_pace_seconds %>
+    <br>
     <%= f.input :max_pace_minute %>
     <%= f.input :max_pace_seconds %>
     <%= f.input :avg_speed %>
