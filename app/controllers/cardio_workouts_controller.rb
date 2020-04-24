@@ -1,6 +1,8 @@
 class CardioWorkoutsController < ApplicationController
   def index
-    @cardio_workouts = CardioWorkout.where(user_id: current_user)
+    @results = CardioWorkout.where(user_id: current_user).order(:date)
+    @cardio_workouts = @results.sort_by { |obj| obj.date }
+    @cardio_workouts.sort! { |x, y| y.date <=> x.date }
   end
 
   def show
