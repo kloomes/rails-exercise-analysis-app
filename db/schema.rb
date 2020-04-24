@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_154843) do
     t.date "date"
     t.time "time"
     t.string "training_type"
-    t.integer "duration_hours"
+    t.integer "duration_hours", default: 0, null: false
     t.integer "duration_minutes"
     t.integer "duration_seconds"
     t.float "distance"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_154843) do
     t.date "date"
     t.time "time"
     t.string "workout_type"
-    t.integer "duration_hours"
+    t.integer "duration_hours", default: 0, null: false
     t.integer "duration_minutes"
     t.integer "duration_seconds"
     t.integer "avg_hr"
