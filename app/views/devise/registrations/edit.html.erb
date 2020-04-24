@@ -3,14 +3,14 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs box">
+  <div class="form-inputs form-box hor-flex">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :height, required: true, autofocus: true %>
+    <%= f.input :height, required: true, autofocus: true, label: "Height (cm)" %>
     <%= f.input :date_of_birth, required: true, autofocus: true %>
     <%= f.input :gender, required: true, autofocus: true  %>
     <%= f.input :password,

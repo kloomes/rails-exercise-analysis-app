@@ -17,6 +17,10 @@
   opacity: 0.6;
 }
 
+.white {
+  color: white;
+}
+
 
 a {
   color: #D10027;
@@ -37,9 +41,19 @@ h3 {
   color: #D10027;
   opacity: 0.8;
   font-weight: bold;
-  text-align: center;
+  // text-align: center;
 }
 
 .red {
   color: #D10027;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }

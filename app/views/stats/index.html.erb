@@ -1,23 +1,23 @@
 <h3 class="banner">Body Measurements</h3>
 <hr>
-<%= link_to "New Stat", new_user_stat_path(current_user) %>
+<%= link_to "New Measurement", new_user_stat_path(current_user) %>
 <hr>
 <% @stats.each do |stat| %>
   <div class="my-card">
-    <div class="date-time hor-flex">
+    <div class="date-time hor-flex card-item-six">
       <div><%= stat.date.strftime('%d/%m/%Y') %></div>
       <div><%= stat.time.strftime('%H:%M') %></div>
     </div>
-    <div class="hor-flex">
+    <div class="hor-flex card-item-six">
       <div><%= stat.weight %>kg</div><div class="light">Weight</div>
     </div>
-    <div class="hor-flex">
+    <div class="hor-flex card-item-six">
       <div><%= stat.body_fat %>%</div><div class="light">Body Fat</div>
     </div>
-    <div class="hor-flex">
+    <div class="hor-flex card-item-six">
       <div><%= stat.lean_mass %>kg</div><div class="light">Lean Mass</div>
     </div>
-    <div class="hor-flex">
+    <div class="hor-flex card-item-six">
       <div><%= stat.bmi %></div><div class="light">BMI</div>
     </div>
     <div>

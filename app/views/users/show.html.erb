@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner main-page">
   <h3><%= @user.name %></h3>
   <p class="light">Weight:</p><p class="red"><%= @latest_stats.weight %>kg</p>
   <p class="light">Body Fat:</p><p class="red"><%= @latest_stats.body_fat %>%</p>
@@ -8,26 +8,26 @@
 <hr>
 <% @results.each do |result| %>
   <div class="my-card">
-    <div class="date-time">
+    <div class="date-time card-item-four">
       <div><%= result.date.strftime('%d/%m/%Y') %></div>
       <div><%= result.time.strftime('%H:%M') %></div>
     </div>
     <% if result.class == CardioWorkout %>
-      <div class="hor-flex">
+      <div class="hor-flex card-item-four">
         <div><%= link_to result.workout_type, user_cardio_workout_path(current_user, result.id) %></div>
         <div class="light"><%= result.training_type %></div>
       </div>
     <% else %>
-      <div class="hor-flex">
+      <div class="hor-flex card-item-four">
         <div><%= link_to result.workout_type, user_weights_workout_path(current_user, result.id) %></div>
       </div>
     <% end %>
-    <div class="hor-flex">
+    <div class="hor-flex card-item-four">
       <div><%= result.kcal %><em>kcal</em></div>
       <div class="light">Calories</div>
     </div>
-    <div class="hor-flex">
-      <div><%= result.duration_hours %>:<%= result.duration_minutes %>:<%= result.duration_seconds %></div>
+    <div class="hor-flex card-item-four">
+      <div><%= result.duration_hours %>:<%= result.duration_minutes.to_s.rjust(2, '0') %>:<%= result.duration_seconds.to_s.rjust(2, '0') %></div>
       <div class="light">Duration</div>
     </div>
   </div>

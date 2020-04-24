@@ -1,10 +1,12 @@
+<div class="banner">
+  <h3><%= @cardio_workout.workout_type %></h3>
+</div>
 <div class="box">
   <ul>
-    <h3><%= @cardio_workout.workout_type %></h3>
     <li><em class="light">Date:</em> <%= @cardio_workout.date.strftime('%d/%m/%Y') %></li>
     <li><em class="light">Time:</em> <%= @cardio_workout.time.strftime('%H:%M') %></li>
     <li><em class="light">Training Type:</em> <%= @cardio_workout.training_type %></li>
-    <li><em class="light">Duration:</em> <%= @cardio_workout.duration_hours %>:<%= @cardio_workout.duration_minutes %>:<%= @cardio_workout.duration_seconds %></li>
+    <li><em class="light">Duration:</em> <%= @cardio_workout.duration_hours %>:<%= @cardio_workout.duration_minutes.to_s.rjust(2, '0') %>:<%= @cardio_workout.duration_seconds %></li>
     <li><em class="light">Distance:</em> <%= @cardio_workout.distance %>km</li>
     <li><em class="light">Average Pace:</em> <%= @cardio_workout.avg_pace_minute %>:<%= @cardio_workout.avg_pace_seconds %>min/km</li>
     <li><em class="light">Max Pace:</em> <%= @cardio_workout.max_pace_minute %>:<%= @cardio_workout.max_pace_seconds %>min/km</li>
@@ -18,4 +20,16 @@
     <li><em class="light">Running Index:</em> <%= @cardio_workout.running_index %></li>
     <li><em class="light">Notes:</em> <%= @cardio_workout.notes %></li>
   </ul>
+  <div class="flex-end">
+    <div class="big-icon">
+      <%= link_to edit_user_cardio_workout_path(current_user.id, @cardio_workout.id) do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+    <div class="big-icon">
+      <%= link_to user_cardio_workout_path(current_user, @cardio_workout.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
 </div>
