@@ -3,8 +3,8 @@
   <%= simple_form_for [current_user, @stat] do |f| %>
     <%= f.input :date, html5: true %>
     <%= f.input :time, html5: true %>
-    <%= f.input :weight %>
-    <%= f.input :body_fat %>
+    <%= f.input :weight, label: "Weight (kg)" %>
+    <%= f.input :body_fat, label: "Body Fat (%)" %>
     <%= f.button :submit, "Save", class: "submit" %>
   <% end %>
 </div>

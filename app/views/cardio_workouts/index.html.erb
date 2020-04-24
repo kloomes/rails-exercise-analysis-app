@@ -1,6 +1,6 @@
 <h3 class="banner">All Cardio Workouts</h3>
 <hr>
-<%= link_to "New Cardio", new_user_cardio_workout_path(current_user) %>
+<%= link_to "New Cardio Workout", new_user_cardio_workout_path(current_user) %>
 <hr>
 <% @cardio_workouts.each do |cardio_workout| %>
   <div class="my-card">
@@ -32,7 +32,7 @@
       <div class="light">Calories</div>
     </div>
     <div class="hor-flex card-item-nine">
-      <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes.to_s.rjust(2, '0') %>:<%= cardio_workout.duration_seconds %><div class="light">Duration</div>
+      <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes.to_s.rjust(2, '0') %>:<%= cardio_workout.duration_seconds.to_s.rjust(2, '0') %><div class="light">Duration</div>
     </div>
     <div class="hor-flex">
       <div>
