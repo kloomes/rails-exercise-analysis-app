@@ -1,6 +1,8 @@
 class WeightsWorkoutsController < ApplicationController
   def index
-    @weights_workouts = WeightsWorkout.where(user_id: current_user)
+    @results = WeightsWorkout.where(user_id: current_user).order(:date)
+    @weights_workouts = @results.sort_by { |obj| obj.date }
+    @weights_workouts.sort! { |x, y| y.date <=> x.date }
   end
 
   def new

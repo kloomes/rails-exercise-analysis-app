@@ -5,7 +5,7 @@ class CreateCardioWorkouts < ActiveRecord::Migration[6.0]
       t.date :date
       t.time :time
       t.string :training_type
-      t.integer :duration_hours
+      t.integer :duration_hours, default: 0, null: false
       t.integer :duration_minutes
       t.integer :duration_seconds
       t.float :distance
