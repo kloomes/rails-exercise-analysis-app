@@ -1,45 +1,78 @@
-<h3 class="banner"><%= @weights_workout.workout_type %></h3>
+<div class="banner">
+  <h3><%= @weights_workout.workout_type %></h3>
+  <div>
+    <p><%= @weights_workout.kcal %><em>kcal</em></p><p class="light">Calories</p>
+  </div>
+  <div>
+    <p><%= @weights_workout.avg_hr %><em>bpm</em></p><p class="light">Average HR</p>
+  </div>
+  <div>
+    <p><%= @weights_workout.max_hr %><em>bpm</em></p><p class="light">Max HR</p>
+  </div>
+  <div>
+    <p><%= @weights_workout.duration_hours %>:<%= @weights_workout.duration_minutes %>:<%= @weights_workout.duration_seconds %></p><p class="light">Duration</p>
+  </div>
+</div>
 <hr>
-<div class="hor-flex">
-  <% @exercises.each do |exercise| %>
-      <strong class="sub-title">
-        <h3><%= exercise.name %> <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %></h3>
-      </strong>
-    <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
-    <table>
-      <tr>
-        <th width="33%">Kg</th>
-        <th width="33%">Reps</th>
-      </tr>
-      <% @exercise_sets.each do |set| %>
+ <div class="box">
+  <div class="hor-flex">
+    <% @exercises.each do |exercise| %>
+        <strong class="sub-title">
+          <h3><%= exercise.name %> <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %></h3>
+        </strong>
+      <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
+      <table>
         <tr>
-          <td width="33%"><%= set.weight %></td>
-          <td width="33%"><%= set.reps %></td>
-          <td width="33%">
-            <%= link_to user_weights_workout_exercise_exercise_set_path(user_id: current_user, weights_workout_id: params[:id], exercise_id: exercise.id, exercise_set_id: set.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          </td>
+          <th width="33%">Kg</th>
+          <th width="33%">Reps</th>
         </tr>
-      <% end %>
-      <tr class="border-top">
-      <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
-        <th width="33%" class="set-inputs"><%= f.input :weight %></th>
-        <th width="33%" class="set-inputs"><%= f.input :reps %></th>
-        <td width="33%"><%= button_tag( :class => "btn") do %>
-          <i class="fas fa-plus my-plus"></i>
+        <% @exercise_sets.each do |set| %>
+          <tr>
+            <td width="33%"><%= set.weight %></td>
+            <td width="33%"><%= set.reps %></td>
+            <td width="33%">
+              <%= link_to user_weights_workout_exercise_exercise_set_path(user_id: current_user, weights_workout_id: params[:id], exercise_id: exercise.id, exercise_set_id: set.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
-        </td>
-      <% end %>
-    </table>
+        <tr class="border-top">
+        <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
+          <th width="33%" class="set-inputs"><%= f.input :weight %></th>
+          <th width="33%" class="set-inputs"><%= f.input :reps %></th>
+          <td width="33%"><%= button_tag( :class => "btn") do %>
+            <i class="fas fa-plus my-plus"></i>
+          <% end %>
+          </td>
+        <% end %>
+      </table>
+    <% end %>
+    <br>
+    <hr>
+  <%= simple_form_for [current_user, @weights_workout, @exercise], html: { class: "exercise-form"} do |f| %>
+    <strong class="red"><%= f.input :name, :label => "Add Exercise"%></strong>
+    <%= f.submit value: "Add", class: "submit" %>
   <% end %>
+  </div>
   <br>
+  <div class="flex-end">
+    <div class="big-icon">
+      <%= link_to edit_user_weights_workout_path(current_user, @weights_workout.id) do %>
+      <i class="far fa-edit"></i>
+    <% end %>
+    </div>
+    <div class="big-icon">
+      <%= link_to user_weights_workout_path(current_user, @weights_workout.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+    </div>
+  </div>
   <hr>
-
-<%= simple_form_for [current_user, @weights_workout, @exercise], html: { class: "exercise-form"} do |f| %>
-  <strong><%= f.input :name, :label => "Add Exercise"%></strong>
-  <%= f.submit value: "Add" %>
-<% end %>
+  <label class="red">Notes</label>
+  <div class="notes">
+    <%= @weights_workout.notes %>
+  </div>
 </div>

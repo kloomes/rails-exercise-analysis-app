@@ -43,3 +43,13 @@ h3 {
 .red {
   color: #D10027;
 }
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
