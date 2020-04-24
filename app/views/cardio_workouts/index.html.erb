@@ -20,7 +20,7 @@
       <div class="light">Distance</div>
     </div>
     <div class="hor-flex">
-      <div><%= cardio_workout.avg_pace_minute %>:<%= cardio_workout.avg_pace_seconds %><em>min/km</em></div>
+      <div><%= cardio_workout.avg_pace_minute %>:<%= cardio_workout.avg_pace_seconds.to_s.rjust(2, '0') %><em>min/km</em></div>
       <div class="light">Avg Pace</div>
     </div>
     <div class="hor-flex">
@@ -32,7 +32,7 @@
       <div class="light">Calories</div>
     </div>
     <div class="hor-flex">
-      <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes %>:<%= cardio_workout.duration_seconds %><div class="light">Duration</div>
+      <%= cardio_workout.duration_hours %>:<%= cardio_workout.duration_minutes.to_s.rjust(2, '0') %>:<%= cardio_workout.duration_seconds %><div class="light">Duration</div>
     </div>
     <div class="hor-flex">
       <div>

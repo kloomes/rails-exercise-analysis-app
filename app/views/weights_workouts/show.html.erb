@@ -10,7 +10,7 @@
     <p><%= @weights_workout.max_hr %><em>bpm</em></p><p class="light">Max HR</p>
   </div>
   <div>
-    <p><%= @weights_workout.duration_hours %>:<%= @weights_workout.duration_minutes %>:<%= @weights_workout.duration_seconds %></p><p class="light">Duration</p>
+    <p><%= @weights_workout.duration_hours %>:<%= @weights_workout.duration_minutes.to_s.rjust(2, '0') %>:<%= @weights_workout.duration_seconds %></p><p class="light">Duration</p>
   </div>
 </div>
 <hr>
