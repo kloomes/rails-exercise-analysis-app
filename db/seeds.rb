@@ -205,5 +205,25 @@ exercises.each do |setset|
   ExerciseSet.create(
     weight: 25.5,
     reps: 10,
-    exercise_id: setset)
+    exercise_id: setset
+    )
+
+  ExerciseSet.create(
+    weight: 25.5,
+    reps: 10,
+    exercise_id: setset
+    )
+
+  ExerciseSet.create(
+    weight: 25.5,
+    reps: 10,
+    exercise_id: setset
+    )
+
+  ExerciseSet.create(
+    weight: 25.5,
+    reps: 10,
+    exercise_id: setset
+    )
+
 end
