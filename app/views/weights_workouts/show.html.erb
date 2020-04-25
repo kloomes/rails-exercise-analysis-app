@@ -14,6 +14,87 @@
   </div>
 </div>
 <hr>
+<div class="weights-box">
+  <% @exercises.each do |exercise| %>
+  <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
+  <div class="exercise-row">
+    <div class="exercise-row-left">
+      <div class="delete-exercise">
+        <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <div class="exercise-name light">
+        <%= exercise.name %> -
+      </div>
+      <% @exercise_sets.each do |set| %>
+        <div class="set-info">
+          <div class="set-weight">
+            <%= set.weight %><em>kg</em>
+          </div>
+          <div class="set-reps red">
+            <%= set.reps < 10 ? " #{set.reps}" : set.reps %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="set-add-boxes">
+      <%= simple_form_for [current_user, @weights_workout, exercise, @exercise_set] do |f| %>
+      <div class="set-box-weight">
+        <%= f.input :weight, label: false, placeholder: "kg" %>
+      </div>
+      <div class="set-box-reps">
+        <%= f.input :reps, label: false, placeholder: "reps" %>
+      </div>
+        <%= button_tag( :class => "btn") do %>
+          <div class="add-icon">
+            <i class="fas fa-plus my-plus"></i>
+          </div>
+        <% end %>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="new-exercise-row">
+    <%= simple_form_for [current_user, @weights_workout, @exercise] do |f| %>
+      <div class="new-exercise-input">
+        <%= f.input :name, label: false, placeholder: "Add Exercise" %>
+      </div>
+      <div class="add-icon">
+        <%= button_tag( :class => "btn") do %>
+          <i class="fas fa-plus my-plus"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr>
+<%= simple_form_for [current_user, @weights_workout] do |f| %>
+  <%= f.input :notes %>
+  <%= f.button :submit, "Save Notes", class: "notes-save red" %>
+<% end %>
+<!--
+
+<label class="red">Notes</label>
+<div class="notes">
+  <%= @weights_workout.notes %>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
  <div class="box">
   <div class="hor-flex">
     <% @exercises.each do |exercise| %>
@@ -84,3 +165,4 @@
     <%= @weights_workout.notes %>
   </div>
 </div>
+ -->
