@@ -1,3 +1,91 @@
+.weights-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 15px;
+  font-size: 1.2em;
+  .exercise-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px dashed lightgrey;
+  }
+  .exercise-row-left {
+    display: flex;
+    align-items: center;
+  }
+  .exercise-name {
+    margin-right: 10px;
+  }
+  .delete-exercise {
+    margin-right: 5px;
+  }
+  .exercise_set_weight {
+    margin-right: 10px;
+  }
+  .set-info {
+    margin-right: 50px;
+    position: relative;
+  }
+  .set-weight {
+    position: absolute;
+    opacity: 0.4;
+    font-size: 0.7em;
+    top: -10px;
+    right: -30px;
+  }
+  .set-box-weight {
+    width: 4.6em;
+  }
+  .set-box-reps {
+    width: 4.6em;
+  }
+  form {
+    display: flex;
+    align-items: center;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+.notes {
+  border: 1px solid lightgrey;
+  height: 7em;
+  padding: 5px;
+  // font-size: 0.9em;
+  background: white;
+}
+
+label {
+  font-size: 1.2em;
+  color: #D10027;
+}
+
+.notes-save {
+  margin-top: -20px;
+  margin-left: -10px;
+}
+
+.new-exercise-row {
+
+}
+
+#new_exercise {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+
+
+
+
+
+
 table {
   width: 50%;
   text-align: center;
@@ -10,12 +98,7 @@ tr {
   font-size: 0.9em;
 }
 
-.notes {
-  border: 1px solid lightgrey;
-  height: 5em;
-  padding: 0 5px;
-  font-size: 0.9em;
-}
+
 
 .my-plus {
   color: #D10027;

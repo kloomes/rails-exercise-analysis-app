@@ -28,7 +28,7 @@ class WeightsWorkoutsController < ApplicationController
     @weights_workout = WeightsWorkout.find(params[:id])
     @weights_workout.update_attributes(weights_workout_params)
     @weights_workout.save
-    redirect_to user_weights_workouts_path(current_user)
+    redirect_to user_weights_workout_path(current_user, params[:id])
   end
 
   def destroy
