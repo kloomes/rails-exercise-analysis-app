@@ -171,54 +171,39 @@ WeightsWorkout.create(
   user_id: 1
   )
 
-squat = [1, 2, 3]
-squat.each do |exc|
+workouts = [1, 2, 3]
+exercises = [1, 2, 3, 4, 5]
+
+workouts.each do |exc|
   Exercise.create(
     name: "Squat",
     weights_workout_id: exc
     )
-end
 
-bench = [1, 2, 3]
-bench.each do |exc|
   Exercise.create(
     name: "Bench Press",
     weights_workout_id: exc
     )
-end
 
-curls = [1, 2, 3]
-curls.each do |exc|
   Exercise.create(
-    name: "Dumbbell Curls",
+    name: "Bent Over Row",
     weights_workout_id: exc
     )
-end
 
-press = [1, 2, 3]
-press.each do |exc|
   Exercise.create(
     name: "Shoulder Press",
     weights_workout_id: exc
     )
-end
 
-crunch = [1, 2, 3]
-crunch.each do |exc|
   Exercise.create(
-    name: "Crunch",
+    name: "Bicep Curl",
     weights_workout_id: exc
     )
 end
 
-setset = [1, 2, 3, 4, 5]
-setset.each do |exc|
-    3.times do
-    ExerciseSet.create(
-      weight: 45,
-      reps: 5,
-      exercise_id: exc
-      )
-  end
+exercises.each do |setset|
+  ExerciseSet.create(
+    weight: 25.5,
+    reps: 10,
+    exercise_id: setset)
 end
-
