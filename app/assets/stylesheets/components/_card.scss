@@ -5,6 +5,44 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  font-size: 1.9vh;
+}
+
+.my-profile-card {
+  background-color: white;
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.cardio-card {
+  background-color: white;
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+  font-size: 1.9vh;
+  padding: 15px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 0.8fr;
+  .cardio-grid-item {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .cardio-card {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+  }
+  .cardio-icons {
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    i {
+      font-size: 3vh;
+    }
+  }
 }
 
 .date-time {
