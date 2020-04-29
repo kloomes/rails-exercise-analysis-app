@@ -1,13 +1,23 @@
+
+
 <div class="banner main-page">
   <h3><%= @user.name %></h3>
-  <p class="light">Weight:</p><p class="red"><%= @latest_stats.weight %>kg</p>
-  <p class="light">Body Fat:</p><p class="red"><%= @latest_stats.body_fat %>%</p>
-  <p class="light">Lean Mass:</p><p class="red"><%= @latest_stats.lean_mass %>kg</p>
-  <p class="light">BMI:</p><p class="red"><%= @latest_stats.bmi %></p>
+  <div>
+    <p class="red date-time"><%= @latest_stats.weight %><em>kg</em></p><p class="light">Weight</p>
+  </div>
+  <div>
+    <p class="red date-time"><%= @latest_stats.body_fat %><em>%</em></p><p class="light">Body Fat</p>
+  </div>
+  <div>
+    <p class="red date-time"><%= @latest_stats.lean_mass %><em>kg</em></p><p class="light">Lean Mass</p>
+  </div>
+  <div>
+    <p class="red date-time"><%= @latest_stats.bmi %></p><p class="light">BMI</p>
+  </div>
 </div>
 <hr>
 <% @results.each do |result| %>
-  <div class="my-card">
+  <div class="my-profile-card">
     <div class="date-time card-item-four">
       <div><%= result.date.strftime('%d/%m/%Y') %></div>
       <div><%= result.time.strftime('%H:%M') %></div>
