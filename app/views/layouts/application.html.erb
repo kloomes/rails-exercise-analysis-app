@@ -14,11 +14,58 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div class="hidden">
+  <% if user_signed_in? %>
+        <div class="btn-group">
+          <%= link_to "Home", user_path(current_user), class: "my-phone-nav-link" %>
+          <div class=" white nav-item dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </div>
+          <div class="dropdown-menu">
+            <%= link_to "Edit My Profile", edit_user_registration_path, class: "dropdown-item red" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item red" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="my-phone-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Body
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "History", user_stats_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "New Measurement", new_user_stat_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="my-phone-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Workouts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "Cardio Workouts", user_cardio_workouts_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "Weights Workouts", user_weights_workouts_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="my-phone-nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            New Workout
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "New Cardio", new_user_cardio_workout_path(current_user), class: "dropdown-item red" %>
+            <%= link_to "New Weights", new_user_weights_workout_path(current_user), class: "dropdown-item red" %>
+          </div>
+        </div>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "my-nav-link" %>
+        </li>
+      <% end %>
+</div>
     <div class="container">
       <%= yield %>
     </div>
+<!--
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ -->
   </body>
 </html>

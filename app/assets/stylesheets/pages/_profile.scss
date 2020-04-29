@@ -2,3 +2,14 @@
   font-size: 2.2vh;
   flex-wrap: wrap;
 }
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .hidden {
+    display: flex;
+    background-color: #D10027;
+  }
+}
