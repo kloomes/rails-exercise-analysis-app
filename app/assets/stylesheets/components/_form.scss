@@ -4,8 +4,10 @@
   padding: 15px;
   display: flex;
   justify-content: center;
+  font-size: 1.8vh;
   .duration {
     display: flex;
+    align-items: stretch;
   }
   .text {
     width: 100%;
@@ -15,6 +17,9 @@
   }
   .form-group {
     margin-bottom: 5px;
+  }
+  .duration {
+    width: 50%;
   }
 }
 
@@ -30,75 +35,88 @@ th {
 
 .one-line {
   display: flex;
-}
-
-
-.cardio_workout_training_type {
-  margin-left: 30.3%;
-}
-
-.cardio_workout_running_index {
-  margin-left: 30.3%;
-}
-
-.cardio_workout_time {
-  margin-left: 29.8%;
-}
-
-.weights_workout_time {
-  margin-left: 30%;
-}
-
-.weights_workout_duration_minutes {
-  margin-left: 5px;
-}
-
-.weights_workout_duration_seconds {
-  margin-left: 5px;
-}
-
-.weights_workout_max_hr {
-  // display: inline-block;
-  margin-left: 30.3%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .cardio_workout_duration_minutes {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .cardio_workout_duration_seconds {
-  margin-left: 5px;
-  margin-right: 33.3%;
+  margin-left: 10px;
 }
 
 .cardio_workout_avg_pace_seconds {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .cardio_workout_max_pace_seconds {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
-.cardio_workout_max_pace_minute {
-  // display: inline-block;
-  margin-left: 10%;
+// .cardio_workout_max_pace_minute {
+//   // display: inline-block;
+//   margin-left: 10px;
+// }
+
+.cardio_workout_time {
+  margin-right: 11%;
 }
 
-.cardio_workout_max_speed {
-  // display: inline-block;
-  margin-left: 30.3%;
+@media only screen and (max-width: 576px) {
+  .form-box {
+    .duration {
+      width: auto;
+    }
+  }
 }
 
-.cardio_workout_max_hr {
-  // display: inline-block;
-  margin-left: 30.3%;
-}
 
-.cardio_workout_descent {
-  // display: inline-block;
-  margin-left: 30.3%;
-}
+// .cardio_workout_training_type {
+//   margin-left: 30.3%;
+// }
 
-.cardio_workout_distance {
-  margin-left: -20.3%;
-}
+// .cardio_workout_running_index {
+//   margin-left: 30.3%;
+// }
+
+
+
+// .weights_workout_time {
+//   margin-left: 30%;
+// }
+
+// .weights_workout_duration_minutes {
+//   margin-left: 5px;
+// }
+
+// .weights_workout_duration_seconds {
+//   margin-left: 5px;
+// }
+
+// .weights_workout_max_hr {
+//   // display: inline-block;
+//   margin-left: 30.3%;
+// }
+
+
+
+// .cardio_workout_max_speed {
+//   // display: inline-block;
+//   margin-left: 30.3%;
+// }
+
+// .cardio_workout_max_hr {
+//   // display: inline-block;
+//   margin-left: 30.3%;
+// }
+
+// .cardio_workout_descent {
+//   // display: inline-block;
+//   margin-left: 30.3%;
+// }
+
+// .cardio_workout_distance {
+//   margin-left: -20.3%;
+// }
