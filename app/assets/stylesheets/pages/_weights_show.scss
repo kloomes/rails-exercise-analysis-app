@@ -8,16 +8,22 @@
   .exercise-row {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
     justify-content: space-between;
     padding: 5px;
     border-bottom: 1px dashed lightgrey;
   }
+  .set-info {
+    margin: 5px 0;
+  }
   .exercise-row-left {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .exercise-name {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .delete-exercise {
     margin-right: 5px;
@@ -70,7 +76,7 @@ label {
 }
 
 .new-exercise-row {
-
+  margin-top: 10px;
 }
 
 #new_exercise {
