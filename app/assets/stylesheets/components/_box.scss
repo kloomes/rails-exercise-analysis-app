@@ -4,7 +4,7 @@
   margin-top: 20px;
   padding: 15px;
   // text-align: center;
-  font-size: 1.2em;
+  font-size: 2.2vh;
   ul {
     list-style: none;
   }
@@ -15,9 +15,17 @@
   }
   li {
     color: #D10027;
-    font-size: 2.2vh;
+    // font-size: 2.2vh;
   }
   em {
     color: black !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .box {
+    li {
+      font-size: 3vh;
+    }
   }
 }

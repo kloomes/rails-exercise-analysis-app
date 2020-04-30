@@ -73,12 +73,19 @@ th {
       margin-bottom: -10px !important;
     }
   }
-  #cardio-workout-time {
-    width: auto !important;
+  #cardio_workout_time {
+    width: 25vw !important;
     margin-right: 0;
   }
-  #cardio-workout-date {
-    width: auto !important;
+  #cardio_workout_date {
+    width: 50vw !important;
+  }
+  #weights_workout_time {
+    width: 25vw !important;
+    margin-right: 0;
+  }
+  #weights_workout_date {
+    width: 50vw !important;
   }
 }
 
