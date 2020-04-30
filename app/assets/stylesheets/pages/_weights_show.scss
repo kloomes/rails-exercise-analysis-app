@@ -65,6 +65,24 @@
   background: white;
 }
 
+.show-name {
+  display: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .hide-name {
+    display: none;
+  }
+  .show-name {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .set-info {
+    margin-bottom: 20px !important;
+  }
+}
+
 label {
   font-size: 1.2em;
   color: #D10027;

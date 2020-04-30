@@ -19,12 +19,22 @@
   <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
   <div class="exercise-row">
     <div class="exercise-row-left">
+      <div class="show-name">
       <div class="delete-exercise">
         <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
       <div class="exercise-name light">
+        <%= exercise.name %>
+      </div>
+      </div>
+      <div class="delete-exercise hide-name">
+        <%= link_to user_weights_workout_exercise_path(current_user, params[:id], exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <div class="exercise-name light hide-name">
         <%= exercise.name %>
       </div>
       <% @exercise_sets.each do |set| %>

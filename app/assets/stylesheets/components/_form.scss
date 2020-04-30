@@ -69,8 +69,26 @@ th {
     .duration {
       width: auto;
     }
+    .cardio_workout_avg_pace_seconds {
+      margin-bottom: -10px !important;
+    }
+  }
+  #cardio_workout_time {
+    width: 25vw !important;
+    margin-right: 0;
+  }
+  #cardio_workout_date {
+    width: 50vw !important;
+  }
+  #weights_workout_time {
+    width: 25vw !important;
+    margin-right: 0;
+  }
+  #weights_workout_date {
+    width: 50vw !important;
   }
 }
+
 
 
 // .cardio_workout_training_type {
