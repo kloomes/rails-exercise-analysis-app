@@ -17,6 +17,9 @@
   .set-info {
     margin: 5px 0;
   }
+  .set-reps {
+    cursor: pointer;
+  }
   .exercise-row-left {
     display: flex;
     align-items: center;
@@ -24,6 +27,7 @@
   }
   .exercise-name {
     margin-right: 20px;
+    cursor: pointer;
   }
   .delete-exercise {
     margin-right: 5px;
