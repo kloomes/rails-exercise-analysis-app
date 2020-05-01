@@ -14,7 +14,7 @@ class WeightsWorkoutsController < ApplicationController
     @user = User.find(params[:user_id])
     @weights_workout[:user_id] = @user.id
     if @weights_workout.save
-      redirect_to user_weights_workouts_path(current_user)
+      redirect_to user_weights_workout_path(current_user, @weights_workout)
     else
       render :new
     end
