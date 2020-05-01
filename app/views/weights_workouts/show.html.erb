@@ -16,7 +16,34 @@
 <hr>
 <div class="weights-box">
   <% @exercises.each do |exercise| %>
-  <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
+    <% @exercise_sets = ExerciseSet.where(exercise_id: exercise.id) %>
+    <% @edit_exercise = Exercise.find(exercise.id) %>
+
+  <!-- Edit exercise Modal -->
+  <div class="modal fade" id=<%= exercise.name %> tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Edit Exercise</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <%= simple_form_for [current_user, @edit_exercise] do |f| %>
+          <%= f.input :name %>
+          <%= f.button :submit, "Save", class: "submit" %>
+        <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn submit" data-dismiss="modal">Close</button>
+          <button type="button" class="btn submit">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="exercise-row">
     <div class="exercise-row-left">
       <div class="show-name">
@@ -25,7 +52,7 @@
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
-      <div class="exercise-name light" type="button" data-toggle="modal" data-target="#edit-exercise-modal">
+      <div class="exercise-name light" type="button" data-toggle="modal" data-target=<%= "#" + exercise.name %>>
         <%= exercise.name %>
       </div>
       </div>
@@ -34,7 +61,7 @@
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
-      <div class="exercise-name light hide-name" type="button" data-toggle="modal" data-target="#edit-exercise-modal">
+      <div class="exercise-name light hide-name" type="button" data-toggle="modal" data-target=<%= "#" + exercise.name %>>
         <%= exercise.name %>
       </div>
       <% @exercise_sets.each do |set| %>
@@ -98,23 +125,4 @@
 <% end %>
 </div>
 
-<!-- Edit exercise Modal -->
-<div class="modal fade" id="edit-exercise-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Edit Exercise</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn submit" data-dismiss="modal">Close</button>
-        <button type="button" class="btn submit">Save</button>
-      </div>
-    </div>
-  </div>
-</div>

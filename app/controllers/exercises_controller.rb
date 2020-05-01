@@ -18,7 +18,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     @exercise.update_attributes(exercise_params)
     @exercise.save
-    redirect_to root_path
+    redirect_to user_weights_workout_path(user_id: current_user, id: @exercise.weights_workout_id )
   end
 
   def destroy
