@@ -6,18 +6,6 @@
       <%= f.input :date, html5: true %>
       <%= f.input :time, html5: true %>
     </div>
-    <div class="one-line">
-      <div class="duration">
-        <%= f.input :duration_hours, placeholder: "hh", label: "Duration" %>
-        <%= f.input :duration_minutes, placeholder: "mm", label: '&nbsp;'.html_safe %>
-        <%= f.input :duration_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
-      </div>
-    </div>
-    <div class="one-line">
-      <%= f.input :avg_hr, label: "Average HR (bpm)" %>
-      <%= f.input :max_hr, label: "Max HR (bpm)" %>
-    </div>
-    <%= f.input :kcal, label: "Calories Burned (kcal)" %>
     <%= f.input :notes %>
     <%= f.button :submit, "Save", class: "submit" %>
   <% end %>

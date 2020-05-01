@@ -17,7 +17,7 @@
       </div>
       <%= f.input :distance, label: "Distance (km)" %>
     </div>
-    <div class="one-line pace">
+    <div class="one-line hidden-pace">
       <div class="duration">
         <%= f.input :avg_pace_minute, placeholder: "mm", label: "Average Pace (min/km)" %>
         <%= f.input :avg_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
@@ -26,6 +26,14 @@
         <%= f.input :max_pace_minute, placeholder: "mm", label: "Max Pace (min/km)" %>
         <%= f.input :max_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
       </div>
+    </div>
+    <div class="duration hidden-pace">
+      <%= f.input :avg_pace_minute, placeholder: "mm", label: "Average Pace (min/km)" %>
+      <%= f.input :avg_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
+    </div>
+    <div class="duration hidden-pace">
+      <%= f.input :max_pace_minute, placeholder: "mm", label: "Max Pace (min/km)" %>
+      <%= f.input :max_pace_seconds, placeholder: "ss", label: '&nbsp;'.html_safe %>
     </div>
     <div class="one-line">
       <%= f.input :avg_speed, label: "Average Speed (kph)" %>

@@ -5,9 +5,6 @@
   display: flex;
   justify-content: center;
   font-size: 1.8vh;
-  .duration {
-    display: flex;
-  }
   .text {
     width: 100%;
   }
@@ -17,10 +14,12 @@
   .form-group {
     margin-bottom: 5px;
   }
-  .duration {
+}
+
+.duration {
+    display: flex;
     width: 50%;
   }
-}
 
 th {
   color: #D10027;
@@ -30,6 +29,11 @@ th {
   color: #D10027;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.submit:hover {
+  color: #D10027;
+  opacity: 0.7;
 }
 
 .one-line {
@@ -66,11 +70,21 @@ th {
   margin-right: 11%;
 }
 
-@media only screen and (max-width: 576px) {
+.hidden-pace {
+  display: none !important;
+}
+
+@media only screen and (max-width: 800px) {
   .form-box {
     .duration {
       width: auto;
     }
+  }
+  .hide-pace {
+    display: none !important;
+  }
+  .hidden-pace {
+  display: flex !important;
   }
   #cardio_workout_time {
     width: 25vw !important;
@@ -86,10 +100,6 @@ th {
   #weights_workout_date {
     width: 50vw !important;
   }
-  .pace {
-    // width: 40vw !important;
-    flex-wrap: wrap !important;
-  }
   .cardio_workout_avg_pace_seconds {
     margin-left: 5px !important;
   }
@@ -98,47 +108,3 @@ th {
     margin-left: 5px !important;
   }
 }
-
-
-
-// .cardio_workout_training_type {
-//   margin-left: 30.3%;
-// }
-
-// .cardio_workout_running_index {
-//   margin-left: 30.3%;
-// }
-
-
-
-// .weights_workout_time {
-//   margin-left: 30%;
-// }
-
-
-
-// .weights_workout_max_hr {
-//   // display: inline-block;
-//   margin-left: 30.3%;
-// }
-
-
-
-// .cardio_workout_max_speed {
-//   // display: inline-block;
-//   margin-left: 30.3%;
-// }
-
-// .cardio_workout_max_hr {
-//   // display: inline-block;
-//   margin-left: 30.3%;
-// }
-
-// .cardio_workout_descent {
-//   // display: inline-block;
-//   margin-left: 30.3%;
-// }
-
-// .cardio_workout_distance {
-//   margin-left: -20.3%;
-// }
