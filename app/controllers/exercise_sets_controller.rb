@@ -20,10 +20,10 @@ class ExerciseSetsController < ApplicationController
   end
 
   def destroy
-    @exercise_set = ExerciseSet.find(params[:exercise_set_id])
-    @weights_workout = WeightsWorkout.find(params[:weights_workout_id])
+    @exercise_set = ExerciseSet.find(params[:id])
+    @weights_workout_id = @exercise_set.exercise.weights_workout_id
     @exercise_set.destroy
-    redirect_to user_weights_workout_path(user_id: current_user, id: @weights_workout.id)
+    redirect_to user_weights_workout_path(user_id: current_user, id: @weights_workout_id)
   end
 
   private
