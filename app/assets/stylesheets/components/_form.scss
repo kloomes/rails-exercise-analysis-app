@@ -66,11 +66,21 @@ th {
   margin-right: 11%;
 }
 
+.hidden-pace {
+  display: none !important;
+}
+
 @media only screen and (max-width: 800px) {
   .form-box {
     .duration {
       width: auto;
     }
+  }
+  .hide-pace {
+    display: none !important;
+  }
+  .hidden-pace {
+  display: flex !important;
   }
   #cardio_workout_time {
     width: 25vw !important;
@@ -85,10 +95,6 @@ th {
   }
   #weights_workout_date {
     width: 50vw !important;
-  }
-  .pace {
-    // width: 40vw !important;
-    flex-wrap: wrap !important;
   }
   .cardio_workout_avg_pace_seconds {
     margin-left: 5px !important;
