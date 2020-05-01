@@ -12,6 +12,13 @@ class ExerciseSetsController < ApplicationController
     end
   end
 
+  def update
+    @exercise_set = ExerciseSet.find(params[:id])
+    @exercise_set.update_attributes(exercise_set_params)
+    @exercise_set.save
+    redirect_to user_weights_workout_path(user_id: current_user, id: @exercise_set.exercise.weights_workout_id)
+  end
+
   def destroy
     @exercise_set = ExerciseSet.find(params[:exercise_set_id])
     @weights_workout = WeightsWorkout.find(params[:weights_workout_id])
